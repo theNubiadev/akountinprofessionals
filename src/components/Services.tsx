@@ -79,7 +79,7 @@ const Services = () => {
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-smooth duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent"></div>
+                <div className="absolute inset-0 bg-primary/70"></div>
                 <div className="absolute top-4 left-4">
                   <span className="px-3 py-1 bg-secondary text-secondary-foreground text-sm font-medium rounded-full">
                     {service.tag}
