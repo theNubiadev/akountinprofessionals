@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">AkountingProfessionals</h3>
+            <h3 className="text-2xl font-bold mb-4">AkountinProfessionals</h3>
             <p className="text-primary-foreground/80">
               Expert accounting services built for UK businesses of all sizes.
             </p>
@@ -39,20 +39,19 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2 text-primary-foreground/80">
-              <li>123 Financial District</li>
-              <li>London, EC2V 7WS</li>
-              <li>United Kingdom</li>
+              <li>50 Campion Road Hatfield AL105FT </li>
               <li className="mt-4">
                 <a href="tel:+442012345678" className="hover:text-primary-foreground transition-smooth">
-                  +44 20 1234 5678
+            01707515008
                 </a>
               </li>
+              <li>info@akountinprofessionals.co.uk </li>
             </ul>
           </div>
         </div>
         <div className="border-t border-primary-foreground/20 pt-8 text-center">
           <p className="text-primary-foreground/80">
-            © {currentYear} AkountingProfessionals. All rights reserved.
+            © {currentYear} AkountinProfessionals. All rights reserved. 
           </p>
         </div>
       </div>
