@@ -42,7 +42,7 @@ const Footer = () => {
               <li>     De Havilland Campus,  Mosquito Way, Hatfield AL10 9EU </li>
               <li className="mt-4">
                 <a href="tel:01707515008" className="hover:text-primary-foreground transition-smooth">
-           01707 515008
+           01707 515 008
                 </a>
               </li>
               <li>info@akountinprofessionals.co.uk </li>

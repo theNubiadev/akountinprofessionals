@@ -59,7 +59,7 @@ const Contact = () => {
                   href="tel:+441707515008"
                   className="text-sm md:text-base text-foreground/80 hover:text-secondary transition-smooth"
                 >
-                  01707 515008
+                  01707 515 008
                 </a>
               </div>
             </Card>
@@ -143,7 +143,7 @@ const Contact = () => {
             </form>
           </Card>
         </div>
-      </div>
+      </div> 
     </section>
   );
 };
