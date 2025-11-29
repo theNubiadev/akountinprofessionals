@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-semibold font-inter text-primary">
-            AkountinProfessionals
+            Akountin Professionals
           </div>
 
           {/* Desktop Navigation */}
