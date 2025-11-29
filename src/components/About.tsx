@@ -2,7 +2,7 @@ import { CheckCircle } from "lucide-react";
 
 const About = () => {
   const features = [
-    "Over 15 years of accounting expertise",
+    "Over 5 years of accounting expertise",
     "Dedicated team of qualified professionals",
     "Personalized service for every client",
     "Cutting-edge cloud-based solutions",
@@ -21,7 +21,7 @@ const About = () => {
 
           <div className="space-y-8 animate-fade-in">
             <p className="text-lg text-foreground/80 leading-relaxed">
-              At <span className="font-semibold text-primary">AkountingProfessionals</span>, we are committed to providing exceptional accounting services that empower businesses to thrive. With years of experience serving UK businesses across various industries, we understand the unique challenges and opportunities that come with managing your finances.
+              At <span className="font-semibold text-primary">AkountinProfessionals</span>, we are committed to providing exceptional accounting services that empower businesses to thrive. With years of experience serving UK businesses across various industries, we understand the unique challenges and opportunities that come with managing your finances.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
