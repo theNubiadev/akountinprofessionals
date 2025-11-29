@@ -92,7 +92,7 @@ const Contact = () => {
 
           <Card className="p-8 shadow-card border-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <h3 className="text-2xl font-bold text-primary mb-6">Send us a message</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} action="https://formsubmit.co/"  className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Name
