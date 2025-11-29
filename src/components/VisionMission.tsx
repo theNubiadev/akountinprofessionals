@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 
 const VisionMission = () => {
   return (
-    <section id="vision-mission" className="py-24 bg-muted/30">
+    <section id="vision-mission" className="py-24 bg-muted/30 font-inter">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
