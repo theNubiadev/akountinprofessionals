@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-accounting.jpg";
-
+// import heroImage from "@/assets/hero-accounting.jpg";
+import Heroimg from "@/assets/Hero.jpg"
 const Hero = () => {
   const scrollToContact = () => {
     const element = document.getElementById("contact");
@@ -34,7 +34,7 @@ const Hero = () => {
           <div className="relative animate-slide-in-right">
             <div className="relative rounded-2xl overflow-hidden shadow-card">
               <img
-                src={heroImage}
+                src={Heroimg}
                 alt="Professional accounting services"
                 className="w-full h-auto"
               />

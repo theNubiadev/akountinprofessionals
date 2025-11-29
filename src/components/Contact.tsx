@@ -59,7 +59,7 @@ const Contact = () => {
                   href="tel:+442012345678"
                   className="text-foreground/80 hover:text-secondary transition-smooth"
                 >
-                  +44 20 1234 5678
+                  01707515008
                 </a>
               </div>
             </Card>
@@ -71,23 +71,21 @@ const Contact = () => {
               <div>
                 <h3 className="font-semibold text-lg text-primary mb-2">Location</h3>
                 <p className="text-foreground/80">
-                  123 Financial District<br />
-                  London, EC2V 7WS<br />
-                  United Kingdom
+                  50 Campion Road Hatfield AL105FT
                 </p>
               </div>
             </Card>
 
             <div className="mt-8 rounded-xl overflow-hidden shadow-card h-[300px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9458081937877!2d-0.09177428422935835!3d51.51773897963642!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761cb1f1e5b645%3A0x7f7d7f4f4f4f4f4f!2sBank%20of%20England!5e0!3m2!1sen!2suk!4v1620000000000!5m2!1sen!2suk"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1234.351863043783!2d-0.24049066122756182!3d51.7750232525893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48763b825c70f4ed%3A0xd2e58306df82e2be!2s50%20Campion%20Rd%2C%20Hatfield%20AL10%209FT%2C%20UK!5e0!3m2!1sen!2sng!4v1764316640784!5m2!1sen!2sng"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="AkountingProfessionals Location"
+                title="AkountinProfessionals Office Location"
               ></iframe>
             </div>
           </div>
