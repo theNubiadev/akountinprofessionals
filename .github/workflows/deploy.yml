@@ -1,4 +1,4 @@
-name: Deploy to HostAfrica for makountinprofessionals.co.uk.com via FTP
+name: Deploy to Truehost domain for akountinprofessionals.co.uk via SFTP
 
 on:
   push:
