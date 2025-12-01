@@ -87,6 +87,7 @@ function Services() {
                 </div>
                 <div className="absolute bottom-4 left-4">
                   <service.icon className="h-12 w-12 text-white" />
+                  
                 </div>
               </div>
               <div className="p-6">
