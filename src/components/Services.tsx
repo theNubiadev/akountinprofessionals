@@ -7,7 +7,7 @@ import cloudAccountingImg from "@/assets/service-cloud-accounting.jpg";
 import auditImg from "@/assets/service-audit.jpg";
 import personalTaxImg from "@/assets/service-personal-tax.jpg";
 
-const Services = () => {
+function Services() {
   const services = [
     {
       icon: Building2,
