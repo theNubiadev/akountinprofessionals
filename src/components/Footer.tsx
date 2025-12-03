@@ -44,8 +44,8 @@ const currentYear = new Date().getFullYear();
               </li>
               <li>info@akountinprofessionals.co.uk </li>
               <li className="flex">
-              <a href="https://facebook.com/"><Facebook />  </a>
-              <a href="https://instagram.com/"><Instagram /></a>
+              <a href="https://www.facebook.com/p/Akountin-Professionals-61584319305259/"><Facebook />  </a>
+              <a href="https://www.instagram.com/akountinprofessionals01/"><Instagram /></a>
               </li>
             </ul>
           </div>
