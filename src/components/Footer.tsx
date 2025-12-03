@@ -1,6 +1,8 @@
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+import { Facebook, Instagram } from "lucide-react";
 
+export default  function Footer()  {
+const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="bg-primary text-primary-foreground font-inter py-10">
       <div className="container mx-auto px-6">
@@ -15,22 +17,17 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#about" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <a href="/home" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <a href="/services" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#vision-mission" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
-                  Vision & Mission
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                <a href="/contact" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
                   Contact
                 </a>
               </li>
@@ -46,6 +43,10 @@ const Footer = () => {
                 </a>
               </li>
               <li>info@akountinprofessionals.co.uk </li>
+              <li className="flex">
+              <a href="https://facebook.com/"><Facebook />  </a>
+              <a href="https://instagram.com/"><Instagram /></a>
+              </li>
             </ul>
           </div>
         </div>
@@ -59,4 +60,3 @@ const Footer = () => {
   );
 };
 
-export default Footer;
