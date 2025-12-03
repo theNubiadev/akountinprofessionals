@@ -7,7 +7,7 @@ import cloudAccountingImg from "@/assets/service-cloud-accounting.jpg";
 import auditImg from "@/assets/service-audit.jpg";
 import personalTaxImg from "@/assets/service-personal-tax.jpg";
 
-function Services() {
+export default function Services() {
   const services = [
     {
       icon: Building2,
@@ -102,4 +102,3 @@ function Services() {
   );
 };
 
-export default Services;

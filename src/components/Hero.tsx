@@ -1,8 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-// import heroImage from "@/assets/hero-accounting.jpg";
-import Heroimg from "@/assets/Hero.jpg"
-const Hero = () => {
+import Heroimg from "@/assets/Hero.jpg";
+
+
+export default function Hero()  {
   const scrollToContact = () => {
     const element = document.getElementById("contact");
     element?.scrollIntoView({ behavior: "smooth" });
@@ -47,5 +48,3 @@ const Hero = () => {
     </section>
   );
 };
-
-export default Hero;
