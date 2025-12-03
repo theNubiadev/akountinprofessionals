@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import VisionMission from "@/components/VisionMission";
-import Contact from "@/components/Contact";
+import Contact from "@/components/ContactComponent";
 import Footer from "@/components/Footer";
 
 const Index = () => {

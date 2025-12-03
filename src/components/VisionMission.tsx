@@ -1,7 +1,7 @@
 import { Target, Eye } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
-const VisionMission = () => {
+export default function VisionMission()  {
   return (
     <section id="vision-mission" className="py-24 bg-muted/30 font-inter">
       <div className="container mx-auto px-6">
@@ -41,5 +41,3 @@ const VisionMission = () => {
     </section>
   );
 };
-
-export default VisionMission;
