@@ -98,11 +98,10 @@ import { toast } from "sonner";
 
           <Card className="p-4 md:p-6 shadow-soft border-0 flex items-start gap-3 md:gap-4 hover:shadow-card transition-smooth">
             <div className="p-2 md:p-3 bg-secondary/10 rounded-xl flex-shrink-0">
-            <Sparkle className="h-5 w-5 md:h-6 md:w-6 text-secondary"/>
-              </div>
-              <div >
-                <h3 className="font-semibold text-base md:text-lg text-primary mb-1 md:mb-2">Socials </h3>
-                <div className=" gap-2 justify-center space-x-2">
+                <Sparkle className="h-5 w-5 md:h-6 md:w-6 text-secondary justify-center text-center" />
+              </div>    
+              
+                <div className=" gap-2 justify-center space-x-2 my-2">
                 <a
                     href="https://www.facebook.com/p/Akountin-Professionals-61584319305259/"
                     className="text-sm md:text-base text-foreground/80 hover:text-secondary transition-smooth"
@@ -117,8 +116,9 @@ import { toast } from "sonner";
                     <Instagram className="inline h-5 w-5 md:h-6 md:w-6 text-secondary mr-2" />
                     Instagram
                   </a>  
-                  </div>
-                </div>
+                  
+              </div>
+              
           </Card>
 
 
