@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const Contact = () => {
+ export default  function ContactComponent() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -92,7 +92,7 @@ const Contact = () => {
 
           <Card className="p-6 md:p-8 shadow-card border-0 animate-fade-in">
             <h3 className="text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6">Send us a message</h3>
-            <form onSubmit={handleSubmit} action="https://formsubmit.co/" className="space-y-4 md:space-y-6">
+            <form onSubmit={handleSubmit} action="https://formsubmit.co/info@akountinprofessionals.co.uk" className="space-y-4 md:space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Name
@@ -148,4 +148,3 @@ const Contact = () => {
   );
 };
 
-export default Contact;

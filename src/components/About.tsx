@@ -1,6 +1,6 @@
 import { CheckCircle } from "lucide-react";
 
-const About = () => {
+export default function About() {
   const features = [
     "Over 5 years of accounting expertise",
     "Dedicated team of qualified professionals",
@@ -50,5 +50,3 @@ const About = () => {
     </section>
   );
 };
-
-export default About;
