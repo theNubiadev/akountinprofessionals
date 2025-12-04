@@ -8,8 +8,7 @@ import { toast } from "sonner";
 
  export default  function ContactComponent() {
 
-   const [sending, setIsSending] = useState(false);
-   
+  const [sending, setSending] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,33 +16,36 @@ import { toast } from "sonner";
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  
-  try {
-    const response = await fetch("https://akountinprofessionals.co.uk/api/send-email.php", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      }),
-    });
+    e.preventDefault();
+    setSending(true); 
 
-    if (response.ok) {
-      toast.success("Thank you for your message! We'll get back to you soon.");
-      setFormData({ name: "", email: "", message: "" });
-    } else {
-      toast.error("Something went wrong. Please try again.");
+    try {
+      const response = await fetch(
+        "https://akountinprofessionals.co.uk/api/send-email.php",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json(); 
+
+      if (response.ok && data.status === "success") {
+        toast.success("Thank you for your message! We'll get back to you soon.");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        toast.error(data.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.");
+      console.error(error);
+    } finally {
+      setSending(false); 
     }
-  } catch (error) {
-    toast.error("Failed to send message. Please try again.");
-  } finally {
-    setIsSending(false);
-  }
-};
+  };
   return (
     <section id="contact" className="py-12 md:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6">
@@ -137,10 +139,11 @@ import { toast } from "sonner";
             </div>
           </div>
 
-          <Card className="p-6 md:p-8 shadow-card border-0 animate-fade-in">
-            <h3 className="text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6">Send us a message</h3>
-            <form onSubmit={handleSubmit} 
-              className="space-y-4 md:space-y-6">
+<Card className="p-6 md:p-8 shadow-card border-0 animate-fade-in">
+            <h3 className="text-xl md:text-2xl font-bold text-primary mb-4 md:mb-6">
+              Send us a message
+            </h3>
+            <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                   Name
@@ -151,7 +154,6 @@ import { toast } from "sonner";
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full"
                   placeholder="Your name"
                 />
               </div>
@@ -165,7 +167,6 @@ import { toast } from "sonner";
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full"
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -178,16 +179,16 @@ import { toast } from "sonner";
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full min-h-[120px] md:min-h-[150px]"
                   placeholder="Tell us about your accounting needs..."
+                  className="min-h-[120px] md:min-h-[150px]"
                 />
               </div>
               <Button
                 type="submit"
-                disabled={sending}
+                disabled={sending} 
                 className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 h-11 md:h-12"
               >
-               { sending ? "Sending Message" : " Send Message  "}
+                {sending ? "Sending Message..." : "Send Message"}
               </Button>
             </form>
           </Card>
