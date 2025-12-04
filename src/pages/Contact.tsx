@@ -5,8 +5,11 @@ export default function Contact() {
     return (
         <>
             <div className="min-h-screen">
-            <Navbar />
-            <ContactComponent />
+                <Navbar />
+                <div className="mt-14">
+                    <ContactComponent />
+                </div>
+            
             <Footer />
             </div>
         </>
