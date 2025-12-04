@@ -28,11 +28,11 @@ export default function Navbar()  {
               className="text-foreground hover:text-primary transition-smooth">
               <a href="/contact">Contact Us</a>
             </button>
-            <Button
+            {/* <Button
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
             >
               Get Started
-            </Button>
+            </Button> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -54,18 +54,18 @@ export default function Navbar()  {
             <button
               className="text-foreground hover:text-primary transition-smooth text-left"
             >
-              Services
+              <a href="/services"> Services</a>
             </button>
             <button
               className="text-foreground hover:text-primary transition-smooth text-left"
             >
              <a href="/contact"> Contact</a>
             </button>
-            <Button
+            {/* <Button
               className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full"
             >
               Get Started
-            </Button>
+            </Button> */}
           </div>
         )}
       </div>
