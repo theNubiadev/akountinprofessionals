@@ -8,6 +8,11 @@ export default function Service() {
             <div className="min-h-screen ">
                 <Navbar />
                 <Services />
+
+
+            <div className="">
+
+                </div>
                 <Footer />
             </div>
         </>

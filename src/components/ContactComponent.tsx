@@ -116,13 +116,8 @@ import { toast } from "sonner";
                     <Instagram className="inline h-5 w-5 md:h-6 md:w-6 text-secondary mr-2" />
                     Instagram
                   </a>  
-                  
               </div>
-              
           </Card>
-
-
-            
             <div className="mt-6 md:mt-8 rounded-xl overflow-hidden shadow-card h-[250px] md:h-[300px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4147.880644312872!2d-0.2534125551094128!3d51.761637577952456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48763c77560f5c5d%3A0x920062dec58d913!2sDe%20Havilland%20Campus%2C%20Mosquito%20Way%2C%20Hatfield%20AL10%209EU%2C%20UK!5e1!3m2!1sen!2sng!4v1764409337606!5m2!1sen!2sng"

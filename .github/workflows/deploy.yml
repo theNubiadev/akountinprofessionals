@@ -1,36 +1,3 @@
-# name: Deploy to Truehost domain for akountinprofessionals.co.uk via SFTP
-
-# on:
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#     - name: Checkout repository
-#       uses: actions/checkout@v3
-
-#     - name: Install dependencies
-#       run: npm install
-
-#     - name: Build Vite project
-#       run: npm run build
-
-#     - name: Upload to server via SFTP
-#       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-#       with:
-#         server: ${{ secrets.SFTP_SERVER }}
-#         port: ${{ secrets.SFTP_PORT }}
-#         username: ${{ secrets.SFTP_USERNAME }}
-#         password: ${{ secrets.SFTP_PASSWORD }}
-#         local_path: "dist/*"
-#         remote_path: "/home/nwitpnms/public_html"
-#         sftp_only: true
-
-
 name: Deploy to Truehost domain for akountinprofessionals.co.uk via SFTP
 
 on:
@@ -83,3 +50,7 @@ jobs:
         local_path: "dist/*"
         remote_path: "/home/nwitpnms/public_html"
         sftp_only: true
+
+
+
+
