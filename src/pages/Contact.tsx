@@ -9,7 +9,6 @@ export default function Contact() {
                 <div className="mt-8">
                     <ContactComponent />
                 </div>
-            
             <Footer />
             </div>
         </>

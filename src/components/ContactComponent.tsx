@@ -17,7 +17,7 @@ import { toast } from "sonner";
   e.preventDefault();
   
   try {
-    const response = await fetch("https://formsubmit.co/info@akountinprofessionals.co.uk", {
+    const response = await fetch("https://info@akountinprofessionals.co.uk/api/send-email.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
