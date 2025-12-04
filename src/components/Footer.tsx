@@ -17,9 +17,9 @@ const currentYear = new Date().getFullYear();
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/home" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
-                  About Us
-                </a>
+                 <a href="/" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
+                  Home
+                </a> 
               </li>
               <li>
                 <a href="/services" className="text-primary-foreground/80 hover:text-primary-foreground transition-smooth">
