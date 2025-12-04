@@ -7,6 +7,9 @@ import { useState } from "react";
 import { toast } from "sonner";
 
  export default  function ContactComponent() {
+
+   const [sending, setIsSending] = useState(false);
+   
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -37,6 +40,8 @@ import { toast } from "sonner";
     }
   } catch (error) {
     toast.error("Failed to send message. Please try again.");
+  } finally {
+    setIsSending(false);
   }
 };
   return (
@@ -179,9 +184,10 @@ import { toast } from "sonner";
               </div>
               <Button
                 type="submit"
+                disabled={sending}
                 className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 h-11 md:h-12"
               >
-                Send Message
+               { sending ? "Sending Message" : " Send Message  "}
               </Button>
             </form>
           </Card>
