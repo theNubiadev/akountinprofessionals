@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 *{
   font-family: 'Inter', sans-serif;
 }
@@ -21,17 +17,27 @@ All colors MUST be HSL.
     --popover-foreground: 220 70% 15%;
 
     /* Brand colors - Navy and Teal */
-    --primary: 220 70% 15%; /* #14224e - Navy */
-    --primary-foreground: 0 0% 100%;
+    /* --primary: 220 70% 15%; #14224e - Navy */
+    /* --primary-foreground: 0 0% 100%; */
 
-    --secondary: 166 30% 61%; /* #7ea9a0 - Teal */
-    --secondary-foreground: 220 70% 15%;
+    /* --secondary: 166 30% 61%; #7ea9a0 - Teal */
+    /* --secondary-foreground: 220 70% 15%; */
 
     --muted: 220 20% 95%;
     --muted-foreground: 220 20% 45%;
 
-    --accent: 166 30% 61%;
-    --accent-foreground: 220 70% 15%;
+    /* --accent: 166 30% 61%; */
+    /* --accent-foreground: 220 70% 15%; */
+
+    
+    --primary: 222 65% 22%;          /* Deep navy — was whatever it was before */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 199 80% 48%;        /* Sky blue — replaces the gold/amber */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 88 60% 48%;            /* Lime green — for highlights if needed */
+    --accent-foreground: 222 65% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
