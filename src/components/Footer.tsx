@@ -68,7 +68,7 @@ import {
   MapPin,
   ArrowUpRight,
 } from "lucide-react";
-
+import Logo from "@/assets/logo.jpg";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -110,7 +110,7 @@ export default function Footer() {
           style={{ borderBottom: "1px solid hsl(0 0% 100% / 0.08)" }}
         >
           {/* Logo */}
-          <a
+          {/* <a
             href="/"
             style={{
               display: "flex",
@@ -166,8 +166,12 @@ export default function Footer() {
                 Professionals
               </span>
             </div>
-          </a>
-
+          </a> */}
+          <img
+            src={Logo}
+            alt="Akountin Professionals"
+            className="w-auto h-[2.25em]"
+          />
           {/* Social pills */}
           <div style={{ display: "flex", gap: "8px" }}>
             {[
