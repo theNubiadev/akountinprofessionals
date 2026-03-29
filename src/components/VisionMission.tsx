@@ -56,10 +56,7 @@ export default function VisionMission() {
       `}</style>
 
       {/* ── Full-bleed primary background ── */}
-      <div
-        className="absolute inset-0 bg-primary"
-        // style={{ background: "hsl(var(--primary))" }}
-      />
+      <div className="absolute inset-0 bg-primary" />
 
       {/* Decorative circles */}
       <div
@@ -88,19 +85,11 @@ export default function VisionMission() {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* ── Header ── */}
-        <div className="mb-16 vm-animate" style={{ animationDelay: "0s" }}>
-          <p
-            className="text-sm font-bold tracking-[0.2em] uppercase mb-3 text-secondary"
-            // style={{ color: "hsl(var(--secondary))" }}
-          >
+        <div className="mb-16 vm-animate [AnimationDelay:0s]">
+          <p className="text-sm font-bold tracking-[0.2em] uppercase mb-3 text-secondary font-montserrat">
             Our purpose
           </p>
-          <h2
-            className="font-bold leading-[1.08] tracking-tight text-white font-comfortaa text-[]"
-            style={{
-              fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
-            }}
-          >
+          <h2 className="font-bold leading-[1.08] tracking-tight text-white font-comfortaa text-[clamp(2.2rem,_4vw,_3.5rem)]">
             Where we're going &{" "}
             <span className="text-secondary">why it matters.</span>
           </h2>
@@ -110,25 +99,17 @@ export default function VisionMission() {
         <div className="grid lg:grid-cols-2 gap-6">
           {/* Vision */}
           <div
-            className="vm-animate group relative rounded-2xl p-8 lg:p-10 flex flex-col gap-6 transition-all duration-300"
-            style={{
-              animationDelay: "0.15s",
-              background: "hsl(0 0% 100% / 0.06)",
-              border: "1px solid hsl(0 0% 100% / 0.1)",
-              backdropFilter: "blur(8px)",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background =
-                "hsl(0 0% 100% / 0.1)";
-              (e.currentTarget as HTMLElement).style.borderColor =
-                "hsl(var(--secondary) / 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background =
-                "hsl(0 0% 100% / 0.06)";
-              (e.currentTarget as HTMLElement).style.borderColor =
-                "hsl(0 0% 100% / 0.1)";
-            }}
+            className="vm-animate group relative rounded-2xl p-8 lg:p-10 flex flex-col gap-6
+    transition-all duration-300
+
+    bg-[hsl(var(--secondary)/0.12)]
+    border border-[hsl(var(--secondary)/0.25)]
+    backdrop-blur-[8px]
+
+    hover:bg-[hsl(var(--secondary)/0.18)]
+    hover:border-[hsl(var(--secondary)/0.5)]
+
+    [animation-delay:0.28s]"
           >
             {/* Label row */}
             <div className="flex items-center gap-4">
@@ -136,42 +117,22 @@ export default function VisionMission() {
                 className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                 style={{ background: "hsl(var(--secondary) / 0.18)" }}
               >
-                <Eye
-                  className="w-6 h-6"
-                  style={{ color: "hsl(var(--secondary))" }}
-                />
+                <Eye className="w-6 h-6 text-secondary" />
               </div>
               <div>
-                <p
-                  className="text-xs font-bold tracking-widest uppercase text-secondary"
-                  // style={{ color: "hsl(var(--secondary))" }}
-                >
+                <p className="text-xs font-bold tracking-widest uppercase text-secondary">
                   01
                 </p>
-                <h3
-                  className="font-bold text-white leading-tight font-[1.6rem]"
-                  style={{
-                    fontFamily: "'Georgia', serif",
-                  }}
-                >
+                <h3 className="font-bold text-white leading-tight font-[1.6rem] font-comfortaa">
                   Our Vision
                 </h3>
               </div>
             </div>
 
             {/* Divider */}
-            <div
-              className="h-px w-full"
-              style={{ background: "hsl(0 0% 100% / 0.1)" }}
-            />
+            <div className="h-px w-full bg-[hsl(0_0%_100%/0.1)]" />
 
-            <p
-              className="leading-relaxed flex-1"
-              style={{
-                fontSize: "clamp(1rem, 1.4vw, 1.1rem)",
-                color: "hsl(0 0% 100% / 0.7)",
-              }}
-            >
+            <p className="leading-relaxed flex-1 text-[hsl(0_0%_100%/0.7)] text-[clamp(1rem, 1.4vw, 1.1rem)]">
               To be the most trusted and innovative accounting firm in the UK,
               recognised for our commitment to excellence, integrity, and client
               success. We envision a future where every business — regardless of
@@ -180,79 +141,35 @@ export default function VisionMission() {
             </p>
 
             {/* Decorative quote mark */}
-            <p
-              className="absolute top-6 right-8 select-none pointer-events-none font-bold leading-none text-[8rem] text-secondary/10"
-              style={{
-                fontFamily: "'Georgia', serif",
-                lineHeight: 1,
-              }}
-            >
+            <p className="absolute top-6 right-8 leading-none select-none pointer-events-none font-bold leading-none text-[8rem] text-secondary/10">
               "
             </p>
           </div>
 
           {/* Mission */}
           <div
-            className="vm-animate group relative rounded-2xl p-8 lg:p-10 flex flex-col gap-6 transition-all duration-300"
-            style={{
-              animationDelay: "0.28s",
-              background: "hsl(var(--secondary) / 0.12)",
-              border: "1px solid hsl(var(--secondary) / 0.25)",
-              backdropFilter: "blur(8px)",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background =
-                "hsl(var(--secondary) / 0.18)";
-              (e.currentTarget as HTMLElement).style.borderColor =
-                "hsl(var(--secondary) / 0.5)";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background =
-                "hsl(var(--secondary) / 0.12)";
-              (e.currentTarget as HTMLElement).style.borderColor =
-                "hsl(var(--secondary) / 0.25)";
-            }}
+            className="vm-animate group relative rounded-2xl p-8 lg:p-10 flex flex-col gap-6 transition-all duration-300 bg-[hsl(var(--secondary)/0.12)] border border-[hsl(var(--secondary)/0.25)] backdrop-blur-[8px]  hover:bg-[hsl(var(--secondary)/0.18)]
+    hover:border-[hsl(var(--secondary)/0.5)]   [animation-delay:0.28s]"
           >
             {/* Label row */}
             <div className="flex items-center gap-4">
-              <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                style={{ background: "hsl(0 0% 100% / 0.12)" }}
-              >
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-[hsl(0_0%_100%/0.12)]">
                 <Target className="w-6 h-6 text-white" />
               </div>
               <div>
-                <p
-                  className="text-xs font-bold tracking-widest uppercase text-secondary"
-                  // style={{ color: "hsl(var(--secondary))" }}
-                >
+                <p className="text-xs font-bold tracking-widest uppercase text-secondary">
                   02
                 </p>
-                <h3
-                  className="font-bold text-white leading-tight text-[1.6rem]"
-                  style={{
-                    // fontSize: "1.6rem",
-                    fontFamily: "'Georgia', serif",
-                  }}
-                >
+                <h3 className="font-bold text-white leading-tight text-[1.6rem] font-comfortaa">
                   Our Mission
                 </h3>
               </div>
             </div>
 
             {/* Divider */}
-            <div
-              className="h-px w-full"
-              style={{ background: "hsl(0 0% 100% / 0.12)" }}
-            />
+            <div className="h-px w-full bg-[hsl(0_0%_100%/0.12)]" />
 
-            <p
-              className="leading-relaxed flex-1"
-              style={{
-                fontSize: "clamp(1rem, 1.4vw, 1.1rem)",
-                color: "hsl(0 0% 100% / 0.7)",
-              }}
-            >
+            <p className="leading-relaxed flex-1 text-[clamp(1rem,1.4vw,1.1rem)] text-[hsl(0_0%_100%/0.7)]">
               To deliver exceptional accounting services that drive business
               success through expert guidance, innovative solutions, and
               unwavering dedication to our clients. We simplify complex
@@ -262,30 +179,16 @@ export default function VisionMission() {
             </p>
 
             {/* Decorative quote mark */}
-            <p
-              className="absolute top-6 right-8 select-none pointer-events-none font-bold text-[8rem]"
-              style={{
-                // fontSize: "8rem",
-                color: "hsl(0 0% 100% / 0.05)",
-                fontFamily: "'Georgia', serif",
-                lineHeight: 1,
-              }}
-            >
+            <p className="absolute top-6 right-8 leading-none select-none pointer-events-none font-bold text-[8rem] text-[hsl(0 0% 100% / 0.05)]">
               "
             </p>
           </div>
         </div>
 
         {/* ── Bottom connecting statement ── */}
-        <div
-          className="mt-12 text-center vm-animate"
-          style={{ animationDelay: "0.4s" }}
-        >
-          <p
-            className="text-sm tracking-widest uppercase font-semibold"
-            style={{ color: "hsl(0 0% 100% / 0.3)" }}
-          >
-            / Akountin Professionals — Excellence in every number
+        <div className="mt-12 text-center vm-animate [animation-delay:0.4s]">
+          <p className="text-sm tracking-widest uppercase font-semibold text-[hsl(0_0%_100%/0.3)]">
+            Akountin Professionals — Excellence in every number
           </p>
         </div>
       </div>
