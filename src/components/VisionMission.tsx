@@ -57,8 +57,8 @@ export default function VisionMission() {
 
       {/* ── Full-bleed primary background ── */}
       <div
-        className="absolute inset-0"
-        style={{ background: "hsl(var(--primary))" }}
+        className="absolute inset-0 bg-primary"
+        // style={{ background: "hsl(var(--primary))" }}
       />
 
       {/* Decorative circles */}
@@ -90,8 +90,8 @@ export default function VisionMission() {
         {/* ── Header ── */}
         <div className="mb-16 vm-animate" style={{ animationDelay: "0s" }}>
           <p
-            className="text-sm font-bold tracking-[0.2em] uppercase mb-3"
-            style={{ color: "hsl(var(--secondary))" }}
+            className="text-sm font-bold tracking-[0.2em] uppercase mb-3 text-secondary"
+            // style={{ color: "hsl(var(--secondary))" }}
           >
             Our purpose
           </p>
@@ -103,9 +103,7 @@ export default function VisionMission() {
             }}
           >
             Where we're going &{" "}
-            <span style={{ color: "hsl(var(--secondary))" }}>
-              why it matters.
-            </span>
+            <span className="text-secondary">why it matters.</span>
           </h2>
         </div>
 
@@ -146,15 +144,14 @@ export default function VisionMission() {
               </div>
               <div>
                 <p
-                  className="text-xs font-bold tracking-widest uppercase"
-                  style={{ color: "hsl(var(--secondary))" }}
+                  className="text-xs font-bold tracking-widest uppercase text-secondary"
+                  // style={{ color: "hsl(var(--secondary))" }}
                 >
                   01
                 </p>
                 <h3
-                  className="font-bold text-white leading-tight"
+                  className="font-bold text-white leading-tight font-[1.6rem]"
                   style={{
-                    fontSize: "1.6rem",
                     fontFamily: "'Georgia', serif",
                   }}
                 >
@@ -185,10 +182,8 @@ export default function VisionMission() {
 
             {/* Decorative quote mark */}
             <p
-              className="absolute top-6 right-8 select-none pointer-events-none font-bold leading-none"
+              className="absolute top-6 right-8 select-none pointer-events-none font-bold leading-none text-[8rem] text-secondary/10"
               style={{
-                fontSize: "8rem",
-                color: "hsl(var(--secondary) / 0.07)",
                 fontFamily: "'Georgia', serif",
                 lineHeight: 1,
               }}
@@ -229,15 +224,15 @@ export default function VisionMission() {
               </div>
               <div>
                 <p
-                  className="text-xs font-bold tracking-widest uppercase"
-                  style={{ color: "hsl(var(--secondary))" }}
+                  className="text-xs font-bold tracking-widest uppercase text-secondary"
+                  // style={{ color: "hsl(var(--secondary))" }}
                 >
                   02
                 </p>
                 <h3
-                  className="font-bold text-white leading-tight"
+                  className="font-bold text-white leading-tight text-[1.6rem]"
                   style={{
-                    fontSize: "1.6rem",
+                    // fontSize: "1.6rem",
                     fontFamily: "'Georgia', serif",
                   }}
                 >
@@ -269,9 +264,9 @@ export default function VisionMission() {
 
             {/* Decorative quote mark */}
             <p
-              className="absolute top-6 right-8 select-none pointer-events-none font-bold"
+              className="absolute top-6 right-8 select-none pointer-events-none font-bold text-[8rem]"
               style={{
-                fontSize: "8rem",
+                // fontSize: "8rem",
                 color: "hsl(0 0% 100% / 0.05)",
                 fontFamily: "'Georgia', serif",
                 lineHeight: 1,
@@ -291,7 +286,7 @@ export default function VisionMission() {
             className="text-sm tracking-widest uppercase font-semibold"
             style={{ color: "hsl(0 0% 100% / 0.3)" }}
           >
-            Akountin Professionals — Excellence in every number
+            / Akountin Professionals — Excellence in every number
           </p>
         </div>
       </div>
