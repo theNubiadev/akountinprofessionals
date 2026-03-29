@@ -204,14 +204,11 @@ export default function Services() {
           style={{ animationDelay: "0s" }}
         >
           <div>
-            <p
-              className="text-sm font-bold tracking-[0.2em] uppercase mb-3"
-              style={{ color: "hsl(var(--secondary))" }}
-            >
+            <p className="text-sm font-bold tracking-[0.2em] uppercase mb-3 text-secondary">
               What we offer
             </p>
             <h2
-              className="font-bold leading-[1.08] tracking-tight"
+              className="font-bold leading-[1.08] tracking-tight text-primary"
               style={{
                 fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
                 fontFamily: "'Georgia', 'Times New Roman', serif",
@@ -219,17 +216,12 @@ export default function Services() {
               }}
             >
               Services built for{" "}
-              <span style={{ color: "hsl(var(--secondary))" }}>
-                every stage
-              </span>
+              <span className="text-secondary">every stage</span>
               <br />
               of your business.
             </h2>
           </div>
-          <p
-            className="max-w-sm text-base leading-relaxed lg:text-right"
-            style={{ color: "hsl(var(--foreground) / 0.55)" }}
-          >
+          <p className="max-w-sm text-base leading-relaxed lg:text-right text-foreground/55">
             Comprehensive accounting solutions — from sole traders to scaling
             enterprises.
           </p>
@@ -260,11 +252,11 @@ export default function Services() {
           {/* Content */}
           <div className="absolute inset-0 flex flex-col justify-end p-8 lg:p-10">
             <span
-              className="inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4 self-start"
-              style={{
-                background: "hsl(var(--secondary))",
-                color: "hsl(var(--secondary-foreground))",
-              }}
+              className="bg-secondary text-secondary-foreground inline-block text-xs font-bold tracking-widest uppercase px-3 py-1 rounded-full mb-4 self-start"
+              // style={{
+              //   background: "hsl(var(--secondary))",
+              //   color: "hsl(var(--secondary-foreground))",
+              // }}
             >
               {featured.tag}
             </span>
@@ -350,10 +342,10 @@ export default function Services() {
                 }}
               >
                 <h3
-                  className="font-bold leading-tight"
+                  className="font-bold leading-tight text-primary"
                   style={{
                     fontSize: "1.05rem",
-                    color: "hsl(var(--primary))",
+                    // color: "hsl(var(--primary))",
                     fontFamily: "'Georgia', serif",
                   }}
                 >
