@@ -483,7 +483,7 @@ export default function Navbar() {
             <img
               src={Logo}
               alt="Akountin Professionals"
-              style={{ height: "36px", width: "auto" }}
+              className="w-auto h-[2.25em]"
             />
 
             {/* ── Desktop nav — only rendered when NOT mobile ── */}
@@ -652,7 +652,7 @@ export default function Navbar() {
               }}
             >
               Free Consultation
-              <ArrowRight style={{ width: "14px", height: "14px" }} />
+              <ArrowRight className="w-7 h-7" />
             </a>
           </div>
         )}

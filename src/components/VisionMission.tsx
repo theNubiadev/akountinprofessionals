@@ -96,10 +96,9 @@ export default function VisionMission() {
             Our purpose
           </p>
           <h2
-            className="font-bold leading-[1.08] tracking-tight text-white"
+            className="font-bold leading-[1.08] tracking-tight text-white font-comfortaa text-[]"
             style={{
               fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
-              fontFamily: "'Georgia', 'Times New Roman', serif",
             }}
           >
             Where we're going &{" "}

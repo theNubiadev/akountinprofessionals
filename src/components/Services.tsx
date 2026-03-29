@@ -208,11 +208,9 @@ export default function Services() {
               What we offer
             </p>
             <h2
-              className="font-bold leading-[1.08] tracking-tight text-primary"
+              className="font-bold leading-[1.08] tracking-tight text-primary font-comfortaa"
               style={{
                 fontSize: "clamp(2.2rem, 4vw, 3.5rem)",
-                fontFamily: "'Georgia', 'Times New Roman', serif",
-                color: "hsl(var(--primary))",
               }}
             >
               Services built for{" "}
@@ -266,7 +264,6 @@ export default function Services() {
                   className="font-bold text-white mb-2 leading-tight"
                   style={{
                     fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
-                    fontFamily: "'Georgia', serif",
                   }}
                 >
                   {featured.title}
@@ -341,20 +338,10 @@ export default function Services() {
                   borderRadius: "0 0 1rem 1rem",
                 }}
               >
-                <h3
-                  className="font-bold leading-tight text-primary"
-                  style={{
-                    fontSize: "1.05rem",
-                    // color: "hsl(var(--primary))",
-                    fontFamily: "'Georgia', serif",
-                  }}
-                >
+                <h3 className="font-bold leading-tight text-primary font-[1.05rem]">
                   {svc.title}
                 </h3>
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: "hsl(var(--foreground) / 0.6)" }}
-                >
+                <p className="text-sm leading-relaxed text-[hsl(var(--foreground)/0.6)]">
                   {svc.description}
                 </p>
               </div>

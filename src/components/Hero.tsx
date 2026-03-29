@@ -119,7 +119,7 @@ export default function Hero() {
                 animation: "fadeUp 0.6s ease both",
               }}
             >
-              <Calculator className="w-3.5 h-3.5" />
+              <Calculator className="w-3.5 h-3.5 font-montserrat" />
               Trusted UK Accounting
             </div>
 
@@ -128,23 +128,16 @@ export default function Hero() {
               style={{ animation: "fadeUp 0.6s 0.15s ease both", opacity: 0 }}
             >
               <h1
-                className="font-bold leading-[1.05] tracking-tight"
+                className="font-bold leading-[1.05] tracking-tight font-comfortaa"
                 style={{
                   fontSize: "clamp(2.8rem, 5.5vw, 5rem)",
-                  fontFamily: "'Georgia', 'Times New Roman', serif",
                 }}
               >
                 Accounting that{" "}
                 <span className="relative inline-block text-secondary">
                   works
                   {/* Underline accent */}
-                  <span
-                    className="absolute left-0 -bottom-1 w-full h-[3px] rounded-full bg-secondary/70"
-                    // style={{
-                    //   background: "hsl(var(--secondary))",
-                    //   opacity: 0.6,
-                    // }}
-                  />
+                  <span className="absolute left-0 -bottom-1 w-full h-[3px] rounded-full bg-secondary/70" />
                 </span>{" "}
                 for your business.
               </h1>
@@ -152,7 +145,7 @@ export default function Hero() {
 
             {/* Sub-copy */}
             <p
-              className="text-white/75 leading-relaxed max-w-lg"
+              className="text-white/75 leading-relaxed max-w-lg "
               style={{
                 fontSize: "clamp(1rem, 1.6vw, 1.2rem)",
                 animation: "fadeUp 0.6s 0.3s ease both",
