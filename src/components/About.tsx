@@ -94,27 +94,24 @@ export default function About() {
           style={{ animationDelay: "0s" }}
         >
           <p
-            className="text-sm font-bold tracking-[0.2em] uppercase mb-4"
-            style={{ color: "hsl(var(--secondary))" }}
+            className="text-sm font-bold tracking-[0.2em] uppercase mb-4 text-secondary"
+            // style={{ color: "hsl(var(--secondary))" }}
           >
             Who we are
           </p>
           <h2
-            className="font-bold leading-[1.08] tracking-tight mb-6"
+            className="font-bold leading-[1.08] tracking-tight mb-6 text-primary font-comfortaa"
             style={{
               fontSize: "clamp(2.4rem, 4.5vw, 3.75rem)",
-              fontFamily: "'Georgia', 'Times New Roman', serif",
+              // fontFamily: "'Georgia', 'Times New Roman', serif",
               color: "hsl(var(--primary))",
             }}
           >
             Built for the ambition of{" "}
-            <span style={{ color: "hsl(var(--secondary))" }}>UK business.</span>
+            <span className="text-secondary">UK business.</span>
           </h2>
           {/* Thin rule */}
-          <div
-            className="h-[2px] w-16 rounded-full"
-            style={{ background: "hsl(var(--secondary))" }}
-          />
+          <div className="h-[2px] w-16 rounded-full bg-secondary" />
         </div>
 
         {/* ── Middle: two-column copy + accent panel ── */}
@@ -125,16 +122,16 @@ export default function About() {
           {/* Copy */}
           <div className="space-y-6">
             <p
-              className="leading-relaxed"
+              className="leading-relaxed text-foreground/70"
               style={{
                 fontSize: "clamp(1rem, 1.5vw, 1.15rem)",
-                color: "hsl(var(--foreground) / 0.75)",
+                // color: "hsl(var(--foreground) / 0.75)",
               }}
             >
               At{" "}
               <span
-                className="font-semibold"
-                style={{ color: "hsl(var(--primary))" }}
+                className="font-semibold text-primary font-comfortaa"
+                // style={{ color: "hsl(var(--primary))" }}
               >
                 Akountin Professionals
               </span>
@@ -145,10 +142,9 @@ export default function About() {
               finances.
             </p>
             <p
-              className="leading-relaxed"
+              className="leading-relaxed  text-foreground/70"
               style={{
-                fontSize: "clamp(1rem, 1.5vw, 1.15rem)",
-                color: "hsl(var(--foreground) / 0.75)",
+                fontSize: "clamp(1rem, 1.5vw, 1.15rem) ",
               }}
             >
               Our team of chartered accountants and financial experts works
@@ -158,10 +154,9 @@ export default function About() {
               financial operations.
             </p>
             <p
-              className="leading-relaxed"
+              className="leading-relaxed text-foreground/70"
               style={{
                 fontSize: "clamp(1rem, 1.5vw, 1.15rem)",
-                color: "hsl(var(--foreground) / 0.75)",
               }}
             >
               We believe in building lasting partnerships that go beyond
@@ -172,7 +167,7 @@ export default function About() {
 
           {/* Accent stat panel */}
           <div
-            className="rounded-2xl p-8 flex flex-col justify-between gap-8 self-start"
+            className="rounded-2xl p-8 flex flex-col justify-between gap-8 self-start bg-primary"
             style={{
               background: "hsl(var(--primary))",
               boxShadow: "0 20px 60px -10px hsl(var(--primary) / 0.35)",
@@ -189,11 +184,9 @@ export default function About() {
                 style={{ borderColor: "hsl(0 0% 100% / 0.12)" }}
               >
                 <p
-                  className="font-bold leading-none mb-1"
+                  className="font-bold leading-none mb-1 text-secondary"
                   style={{
                     fontSize: "clamp(2rem, 3.5vw, 2.75rem)",
-                    fontFamily: "'Georgia', serif",
-                    color: "hsl(var(--secondary))",
                   }}
                 >
                   {value}
@@ -238,26 +231,19 @@ export default function About() {
               }}
             >
               {/* Icon chip */}
-              <div
-                className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
-                style={{ background: "hsl(var(--secondary) / 0.12)" }}
-              >
-                <Icon
-                  className="w-5 h-5"
-                  style={{ color: "hsl(var(--secondary))" }}
-                />
+              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 bg-secondary/20">
+                <Icon className="w-5 h-5 text-secondary" />
               </div>
               <h3
-                className="font-semibold mb-2"
+                className="font-semibold mb-2 text-primary"
                 style={{
                   fontSize: "0.95rem",
-                  color: "hsl(var(--primary))",
                 }}
               >
                 {title}
               </h3>
               <p
-                className="text-sm leading-relaxed"
+                className="text-sm leading-relaxed text-foreground/6"
                 style={{ color: "hsl(var(--foreground) / 0.6)" }}
               >
                 {body}
