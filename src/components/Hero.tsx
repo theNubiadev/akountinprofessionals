@@ -35,13 +35,9 @@ export default function Hero() {
           <div className="text-white space-y-10">
             {/* Eyebrow */}
             <div
-              className="
-              inline-flex items-center gap-2 px-4 py-2 rounded-full
-              text-sm font-semibold uppercase tracking-[0.12em]
-              bg-[hsl(var(--secondary)/0.18)]
-              border border-[hsl(var(--secondary)/0.35)]
-              text-[hsl(var(--secondary))]
-              animate-[fadeUp_0.6s_ease_both]
+              className=" inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-[0.12em]
+              bg-[hsl(var(--secondary)/0.18)] border border-[hsl(var(--secondary)/0.35)]
+              text-[hsl(var(--secondary))] animate-[fadeUp_0.6s_ease_both]
             "
             >
               <Calculator className="w-3.5 h-3.5" />
@@ -96,7 +92,7 @@ export default function Hero() {
             {/* Stats */}
             <div className="flex flex-wrap gap-8 pt-2 animate-[fadeUp_0.6s_0.6s_ease_both] opacity-0">
               {[
-                { icon: TrendingUp, value: "50+", label: "Businesses served" },
+                { icon: TrendingUp, value: "150+", label: "Businesses served" },
                 { icon: Clock, value: "15 yrs", label: "Industry experience" },
                 { icon: Shield, value: "100%", label: "HMRC compliant" },
               ].map(({ icon: Icon, value, label }) => (

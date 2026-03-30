@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, ArrowRight } from "lucide-react";
-import Logo from "@/assets/logo.jpg";
+import Logo from "@/assets/logo-nobg.png";
 
 const links = [
   { label: "Home", href: "/" },
