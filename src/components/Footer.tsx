@@ -23,7 +23,7 @@ export default function Footer() {
           <img
             src={Logo}
             alt="Akountin Professionals"
-            className="w-auto h-[2.25em]"
+            className="w-48 h-[2.25em]"
           />
 
           {/* Social pills */}

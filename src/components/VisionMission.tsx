@@ -160,7 +160,7 @@ export default function VisionMission() {
                 <p className="text-xs font-bold tracking-widest uppercase text-secondary">
                   02
                 </p>
-                <h3 className="font-bold text-white leading-tight text-[1.6rem] font-comfortaa">
+                <h3 className="font-bold text-white leading-tight font-[1.6rem] font-comfortaa">
                   Our Mission
                 </h3>
               </div>
