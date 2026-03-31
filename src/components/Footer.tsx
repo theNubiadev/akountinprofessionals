@@ -20,11 +20,14 @@ export default function Footer() {
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* ── Top strip ── */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-8 border-b border-[hsl(0_0%_100%/0.08)]">
-          <img
-            src={Logo}
-            alt="Akountin Professionals"
-            className="w-48 h-[2.25em]"
-          />
+          {/* Logo — white bg pill so the image reads on dark footer */}
+          <a href="/" className="inline-block shrink-0">
+            <img
+              src={Logo}
+              alt="Akountin Professionals"
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
+          </a>
 
           {/* Social pills */}
           <div className="flex gap-2">
@@ -46,11 +49,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="
-                  flex items-center gap-1 rounded-full border  px-[0.4rem] py-[0.85rem]
-                  text-[0.8rem] font-medium border-[hsl(0_0%_100%/0.12)]
-                  text-[hsl(0_0%_100%/0.55)] transition-all duration-200 hover:border-[hsl(var(--secondary)/0.5)]  hover:text-[hsl(var(--secondary))] hover:bg-[hsl(var(--secondary)/0.08)]
-                "
+                className="flex items-center gap-1.5 rounded-full border px-3 py-2 text-[0.8rem] font-medium border-[hsl(0_0%_100%/0.12)] text-[hsl(0_0%_100%/0.55)] transition-all duration-200 hover:border-[hsl(var(--secondary)/0.5)] hover:text-[hsl(var(--secondary))] hover:bg-[hsl(var(--secondary)/0.08)]"
               >
                 <Icon className="w-[14px] h-[14px]" />
                 {label}
@@ -72,16 +71,7 @@ export default function Footer() {
             {/* CTA */}
             <a
               href="/contact"
-              className="
-                inline-flex items-center gap-1
-                px-[1.1rem] py-[0.55rem]
-                rounded-md
-                bg-[hsl(var(--secondary))]
-                text-[hsl(var(--primary))]
-                text-[0.8rem] font-bold uppercase tracking-[0.04em]
-                transition-opacity duration-200
-                hover:opacity-85
-              "
+              className="inline-flex items-center gap-1 px-[1.1rem] py-[0.55rem] rounded-md bg-[hsl(var(--secondary))] text-[hsl(var(--primary))] text-[0.8rem] font-bold uppercase tracking-[0.04em] transition-opacity duration-200 hover:opacity-85"
             >
               Free Consultation
               <ArrowUpRight className="w-[13px] h-[13px]" />
@@ -117,7 +107,6 @@ export default function Footer() {
             <p className="text-[0.7rem] font-bold uppercase tracking-[0.16em] text-[hsl(var(--secondary))] mb-4">
               Contact Us
             </p>
-
             <ul className="flex flex-col gap-3">
               {[
                 {
@@ -138,7 +127,6 @@ export default function Footer() {
               ].map(({ icon: Icon, value, href }, i) => (
                 <li key={i} className="flex items-start gap-2.5">
                   <Icon className="w-[14px] h-[14px] text-[hsl(var(--secondary))] mt-[2px] shrink-0" />
-
                   {href ? (
                     <a
                       href={href}
@@ -162,9 +150,6 @@ export default function Footer() {
           <p className="text-[0.8rem] text-[hsl(0_0%_100%/0.3)]">
             © {currentYear} Akountin Professionals. All rights reserved.
           </p>
-          {/* <p className="text-[0.8rem] text-[hsl(0_0%_100%/0.2)]">
-            Registered in England & Wales
-          </p> */}
         </div>
       </div>
     </footer>
