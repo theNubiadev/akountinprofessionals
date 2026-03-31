@@ -16,7 +16,7 @@ export default function ContactComponent() {
 
     try {
       const response = await fetch(
-        "https://akountinprofessionals.co.uk/api/send-email.php",
+        "https://akountinprofessionals.co.uk/backend/api/contact",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
