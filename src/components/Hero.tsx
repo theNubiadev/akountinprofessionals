@@ -114,7 +114,7 @@ export default function Hero() {
           {/* RIGHT */}
           <div className="relative animate-[slideIn_0.7s_0.25s_ease_both] opacity-0">
             {/* Border frame */}
-            <div className="absolute -inset-3 rounded-3xl border border-[hsl(var(--secondary)/0.25)] rotate-[2.5deg]" />
+            {/* <div className="absolute -inset-3 rounded-3xl border border-[hsl(var(--secondary)/0.25)] rotate-[2.5deg]" /> */}
 
             {/* Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-[0_30px_80px_-10px_hsl(0_0%_0%/0.5),0_0_0_1px_hsl(var(--secondary)/0.15)]">
