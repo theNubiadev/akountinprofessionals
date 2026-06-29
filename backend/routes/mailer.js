@@ -24,7 +24,7 @@ transporter.verify((error) => {
   }
 });
 
-router.post("/", async (req, res) => { // ← POST, and relative path
+router.post("/backend", async (req, res) => { // ← POST, and relative path
   console.log("Request body:", req.body);
 
   const { name, email, message } = req.body || {};
