@@ -7,7 +7,9 @@ import Index from "./pages/Index";
 import Service from "./pages/Service";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
-
+import EditorDashboard from "./pages/EditorDashboard";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -20,7 +22,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Service />} />
           <Route path="/contact" element={ <Contact />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/editor" element={<EditorDashboard />}/>
+          <Route path="/blog" element={<Blog />} />
+           <Route path="/blog/:slug" element={<BlogPost />} />
+           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

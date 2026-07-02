@@ -1,7 +1,8 @@
 import { useState } from "react";
 import CreatePublication from "@/components/CreatePublication";
 import BlogManager from "@/components/BlogManager";
-
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 export default function EditorDashboard() {
   const [activeTab, setActiveTab] = useState("create"); // "create" | "manage"
   const [refreshKey, setRefreshKey] = useState(0);
@@ -12,6 +13,8 @@ export default function EditorDashboard() {
   }
 
   return (
+    <> 
+    <Navbar />
     <div className="min-h-screen bg-[#F8F6F1]">
       <div className="flex">
         {/* Sidebar */}
@@ -67,6 +70,8 @@ export default function EditorDashboard() {
         </main>
       </div>
     </div>
+<Footer />
+    </>
   );
 }
 
