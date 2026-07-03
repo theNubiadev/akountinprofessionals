@@ -1,7 +1,7 @@
 // routes/blog.js
-import express from "express";
-import Post from "../models/Post.js";
-const express = re
+const express = require("express");
+const Post = require("./model/Post.js")
+
 const router = express.Router();
 
 // List published posts (with pagination)
