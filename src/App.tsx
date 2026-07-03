@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import EditorDashboard from "./pages/EditorDashboard";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
+import AdminLogin from "./pages/admin/LOgin";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -25,7 +26,8 @@ const App = () => (
           <Route path="/editor" element={<EditorDashboard />}/>
           <Route path="/blog" element={<Blog />} />
            <Route path="/blog/:slug" element={<BlogPost />} />
-           <Route path="*" element={<NotFound />} />
+            <Route path="/admin/login" element={<AdminLogin />}/>
+            <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
