@@ -100,6 +100,7 @@ export default function AdminDashboard() {
           </div>
           <nav className="hidden md:flex items-center gap-1">
             <span className="text-white/90 text-sm px-3 py-1.5 rounded bg-white/10">Posts</span>
+            
             <Link
               to="/admin/posts/new"
               className="text-white/60 hover:text-white text-sm px-3 py-1.5 rounded transition-colors"
