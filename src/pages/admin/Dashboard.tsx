@@ -99,7 +99,10 @@ export default function AdminDashboard() {
             <p className="font-serif text-lg leading-tight">Blog Dashboard</p>
           </div>
           <nav className="hidden md:flex items-center gap-1">
+         
+         <Link to='/admin/dashboard'> 
             <span className="text-white/90 text-sm px-3 py-1.5 rounded bg-white/10">Posts</span>
+         </Link>
             
             <Link
               to="/admin/posts/new"

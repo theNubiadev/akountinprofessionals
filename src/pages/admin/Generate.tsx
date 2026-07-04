@@ -100,7 +100,7 @@ export default function GeneratePage() {
         status,
       });
       toast(status === "published" ? "Post published!" : "Draft saved — you can edit it in Posts.");
-      setTimeout(() => navigate("/admin"), 1200);
+      setTimeout(() => navigate("/admin/dashboard"), 1200);
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -127,7 +127,7 @@ export default function GeneratePage() {
             <p className="font-serif text-lg leading-tight">Blog Dashboard</p>
           </div>
           <nav className="hidden md:flex items-center gap-1">
-            <Link to="/admin" className="text-white/60 hover:text-white text-sm px-3 py-1.5 rounded transition-colors">Posts</Link>
+            <Link to="/admin/dashboard" className="text-white/60 hover:text-white text-sm px-3 py-1.5 rounded transition-colors">Posts</Link>
             <Link to="/admin/posts/new" className="text-white/60 hover:text-white text-sm px-3 py-1.5 rounded transition-colors">New post</Link>
             <span className="text-white/90 text-sm px-3 py-1.5 rounded bg-white/10">AI generate</span>
           </nav>
@@ -142,7 +142,7 @@ export default function GeneratePage() {
 
         {/* ── Page title ── */}
         <div className="mb-8">
-          <Link to="/admin" className="text-xs text-[#9C9384] hover:text-[#14213D] transition-colors inline-flex items-center gap-1 mb-1">← All posts</Link>
+          <Link to="/admin/dashboard" className="text-xs text-[#9C9384] hover:text-[#14213D] transition-colors inline-flex items-center gap-1 mb-1">← All posts</Link>
           <h1 className="font-serif text-2xl text-[#14213D]">AI Post Generator</h1>
           <p className="text-sm text-[#9C9384] mt-1">
             Claude writes a full draft — you review and edit before anything goes live.

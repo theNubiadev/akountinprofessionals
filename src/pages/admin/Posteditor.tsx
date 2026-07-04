@@ -64,7 +64,7 @@ export default function PostEditor() {
       .list()
       .then((posts) => {
         const post = posts.find((p) => p.id === id);
-        if (!post) { navigate("/admin", { replace: true }); return; }
+        if (!post) { navigate("/admin/dashboard", { replace: true }); return; }
         setForm({
           title:           post.title,
           slug:            post.slug,
@@ -162,7 +162,7 @@ export default function PostEditor() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <Link
-            to="/admin"
+            to="/admin/dashboard"
             className="text-xs text-[#9C9384] hover:text-[#14213D] transition-colors inline-flex items-center gap-1 mb-1"
           >
             ← All posts
@@ -402,7 +402,7 @@ function Shell({ children }: { children: React.ReactNode }) {
           </div>
           <nav className="hidden md:flex items-center gap-1">
             <Link
-              to="/admin"
+              to="/admin/dashboard"
               className="text-white/60 hover:text-white text-sm px-3 py-1.5 rounded transition-colors"
             >
               Posts

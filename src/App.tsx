@@ -8,15 +8,14 @@ import Index from "./pages/Index";
 import Service from "./pages/Service";
 import NotFound from "./pages/NotFound";
 import Contact from "./pages/Contact";
-import EditorDashboard from "./pages/EditorDashboard";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminLogin from "./pages/admin/Login";
-import AdminDashboard from "./pages/admin/Dashboard"; // ← separate file
-import PostEditor from "./pages/admin/Posteditor"; // ← separate file
+import AdminDashboard from "./pages/admin/Dashboard"; 
+import PostEditor from "./pages/admin/Posteditor"; 
 import GeneratePage from "./pages/admin/Generate";
 
 const queryClient = new QueryClient();
@@ -33,7 +32,6 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<Service />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/editor" element={<EditorDashboard />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
 
@@ -48,7 +46,6 @@ const App = () => (
               <Route path="/admin/generate" element={<GeneratePage />} />
             </Route>
 
-            {/* ── 404 — must be inside <Routes> ── */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
