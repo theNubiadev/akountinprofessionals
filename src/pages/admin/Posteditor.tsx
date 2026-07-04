@@ -54,7 +54,7 @@ export default function PostEditor() {
   const [toastMsg, setToastMsg] = useState("");
   const [slugManual, setSlugManual] = useState(false); // user has hand-edited slug
 
-  // ── Load existing post ──────────────────────────────────────────────────────
+  // ── Load existing post 
   useEffect(() => {
     if (isNew) {
       setForm({ ...EMPTY, authorName: user?.name ?? "" });
@@ -102,7 +102,7 @@ export default function PostEditor() {
     setTimeout(() => setToastMsg(""), 3500);
   }
 
-  // ── Save ────────────────────────────────────────────────────────────────────
+  // ── Save 
   async function save(statusOverride?: "draft" | "published") {
     const status = statusOverride ?? form.status;
     setError("");
