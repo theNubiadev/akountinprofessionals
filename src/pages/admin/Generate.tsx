@@ -7,9 +7,9 @@ type Tone = "professional" | "friendly" | "educational" | "concise";
 
 const TONE_LABELS: Record<Tone, string> = {
   professional: "Professional",
-  friendly:     "Friendly & approachable",
-  educational:  "Educational",
-  concise:      "Concise & direct",
+  friendly: "Friendly & approachable",
+  educational: "Educational",
+  concise: "Concise & direct",
 };
 
 const GENERATING_STEPS = [
@@ -25,25 +25,25 @@ export default function GeneratePage() {
   const navigate = useNavigate();
 
   // Form
-  const [topic,    setTopic]    = useState("");
+  const [topic, setTopic] = useState("");
   const [keywords, setKeywords] = useState("");
-  const [tone,     setTone]     = useState<Tone>("professional");
+  const [tone, setTone] = useState<Tone>("professional");
 
   // State machine: idle → generating → review
-  const [phase,   setPhase]   = useState<"idle" | "generating" | "review">("idle");
+  const [phase, setPhase] = useState<"idle" | "generating" | "review">("idle");
   const [stepIdx, setStepIdx] = useState(0);
-  const [draft,   setDraft]   = useState<GeneratedDraft | null>(null);
-  const [error,   setError]   = useState("");
+  const [draft, setDraft] = useState<GeneratedDraft | null>(null);
+  const [error, setError] = useState("");
 
   // Editable review fields
-  const [editTitle,   setEditTitle]   = useState("");
+  const [editTitle, setEditTitle] = useState("");
   const [editExcerpt, setEditExcerpt] = useState("");
   const [editContent, setEditContent] = useState("");
-  const [editTags,    setEditTags]    = useState("");
-  const [editMeta,    setEditMeta]    = useState("");
-  const [editAuthor,  setEditAuthor]  = useState("");
+  const [editTags, setEditTags] = useState("");
+  const [editMeta, setEditMeta] = useState("");
+  const [editAuthor, setEditAuthor] = useState("");
 
-  const [saving,   setSaving]   = useState(false);
+  const [saving, setSaving] = useState(false);
   const [toastMsg, setToastMsg] = useState("");
 
   function toast(msg: string) {
@@ -53,7 +53,10 @@ export default function GeneratePage() {
 
   // ── Generate ────────────────────────────────────────────────────────────────
   async function generate() {
-    if (!topic.trim()) { setError("Please enter a topic."); return; }
+    if (!topic.trim()) {
+      setError("Please enter a topic.");
+      return;
+    }
     setError("");
     setPhase("generating");
     setStepIdx(0);
@@ -64,7 +67,10 @@ export default function GeneratePage() {
     }, 2000);
 
     try {
-      const kws = keywords.split(",").map((k) => k.trim()).filter(Boolean);
+      const kws = keywords
+        .split(",")
+        .map((k) => k.trim())
+        .filter(Boolean);
       const result = await ai.generate(topic, kws, tone);
 
       setDraft(result);
@@ -89,17 +95,24 @@ export default function GeneratePage() {
     setSaving(true);
     try {
       await adminPosts.create({
-        title:           editTitle.trim(),
-        slug:            draft.slug,
-        excerpt:         editExcerpt.trim(),
-        content:         editContent.trim(),
-        tags:            editTags.split(",").map((t) => t.trim()).filter(Boolean),
+        title: editTitle.trim(),
+        slug: draft.slug,
+        excerpt: editExcerpt.trim(),
+        content: editContent.trim(),
+        tags: editTags
+          .split(",")
+          .map((t) => t.trim())
+          .filter(Boolean),
         metaDescription: editMeta.trim(),
-        authorName:      editAuthor.trim() || "AI Assistant",
-        author:          "ai" as const,
+        authorName: editAuthor.trim() || "AI Assistant",
+        author: "ai" as const,
         status,
       });
-      toast(status === "published" ? "Post published!" : "Draft saved — you can edit it in Posts.");
+      toast(
+        status === "published"
+          ? "Post published!"
+          : "Draft saved — you can edit it in Posts.",
+      );
       setTimeout(() => navigate("/admin/dashboard"), 1200);
     } catch (e) {
       setError((e as Error).message);
@@ -127,31 +140,58 @@ export default function GeneratePage() {
             <p className="font-serif text-lg leading-tight">Blog Dashboard</p>
           </div>
           <nav className="hidden md:flex items-center gap-1">
-            <Link to="/admin/dashboard" className="text-white/60 hover:text-white text-sm px-3 py-1.5 rounded transition-colors">Posts</Link>
-            <Link to="/admin/posts/new" className="text-white/60 hover:text-white text-sm px-3 py-1.5 rounded transition-colors">New post</Link>
-            <span className="text-white/90 text-sm px-3 py-1.5 rounded bg-white/10">AI generate</span>
+            <Link
+              to="/admin/dashboard"
+              className="text-white/60 hover:text-white text-sm px-3 py-1.5 rounded transition-colors"
+            >
+              Posts
+            </Link>
+            <Link
+              to="/admin/posts/new"
+              className="text-white/60 hover:text-white text-sm px-3 py-1.5 rounded transition-colors"
+            >
+              New post
+            </Link>
+            <span className="text-white/90 text-sm px-3 py-1.5 rounded bg-white/10">
+              AI generate
+            </span>
           </nav>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-white/50 text-sm hidden md:block">{user?.name}</span>
-          <button onClick={async () => { await logout(); navigate("/admin/login"); }} className="text-white/60 hover:text-white text-sm transition-colors">Sign out</button>
+          <span className="text-white/50 text-sm hidden md:block">
+            {user?.name}
+          </span>
+          <button
+            onClick={async () => {
+              await logout();
+              navigate("/admin/login");
+            }}
+            className="text-white/60 hover:text-white text-sm transition-colors"
+          >
+            Sign out
+          </button>
         </div>
       </header>
 
       <main className="flex-1 px-6 md:px-12 py-10 max-w-4xl mx-auto w-full">
-
         {/* ── Page title ── */}
         <div className="mb-8">
-          <Link to="/admin/dashboard" className="text-xs text-[#9C9384] hover:text-[#14213D] transition-colors inline-flex items-center gap-1 mb-1">← All posts</Link>
-          <h1 className="font-serif text-2xl text-[#14213D]">AI Post Generator</h1>
+          <Link
+            to="/admin/dashboard"
+            className="text-xs text-[#9C9384] hover:text-[#14213D] transition-colors inline-flex items-center gap-1 mb-1"
+          >
+            ← All posts
+          </Link>
+          <h1 className="font-serif text-2xl text-[#14213D]">
+            AI Post Generator
+          </h1>
           <p className="text-sm text-[#9C9384] mt-1">
-            Claude writes a full draft — you review and edit before anything goes live.
+            Claude writes a full draft — you review and edit before anything
+            goes live.
           </p>
         </div>
 
-        {/* ────────────────────────────────────────────────────────────────────
-            PHASE: idle / generating — show the form
-        ──────────────────────────────────────────────────────────────────── */}
+        {/*  PHASE: idle / generating — show the form */}
         {phase !== "review" && (
           <div className="bg-[#14213D] rounded-2xl p-8 relative overflow-hidden">
             {/* Ambient glow */}
@@ -160,7 +200,9 @@ export default function GeneratePage() {
             <p className="text-[#C9A227] text-[10px] uppercase tracking-[0.18em] font-semibold mb-1">
               Powered by Claude
             </p>
-            <h2 className="font-serif text-white text-xl mb-6">Generate a blog post</h2>
+            <h2 className="font-serif text-white text-xl mb-6">
+              Generate a blog post
+            </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
               {/* Topic */}
@@ -178,7 +220,12 @@ export default function GeneratePage() {
 
               {/* Keywords */}
               <div>
-                <label className="ai-label">Keywords <span className="text-white/30">(comma-separated, optional)</span></label>
+                <label className="ai-label">
+                  Keywords{" "}
+                  <span className="text-white/30">
+                    (comma-separated, optional)
+                  </span>
+                </label>
                 <input
                   value={keywords}
                   onChange={(e) => setKeywords(e.target.value)}
@@ -198,7 +245,9 @@ export default function GeneratePage() {
                   disabled={phase === "generating"}
                 >
                   {(Object.keys(TONE_LABELS) as Tone[]).map((t) => (
-                    <option key={t} value={t}>{TONE_LABELS[t]}</option>
+                    <option key={t} value={t}>
+                      {TONE_LABELS[t]}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -216,7 +265,13 @@ export default function GeneratePage() {
                 onClick={generate}
                 className="flex items-center gap-2 bg-[#C9A227] hover:bg-[#B8941F] text-[#14213D] font-semibold text-sm px-6 py-3 rounded-xl transition-colors"
               >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                 </svg>
                 Generate draft
@@ -224,7 +279,9 @@ export default function GeneratePage() {
             ) : (
               <div className="flex items-center gap-3 bg-white/5 rounded-xl px-5 py-4">
                 <div className="w-5 h-5 border-2 border-[#C9A227]/30 border-t-[#C9A227] rounded-full animate-spin flex-shrink-0" />
-                <p className="text-white/80 text-sm">{GENERATING_STEPS[stepIdx]}</p>
+                <p className="text-white/80 text-sm">
+                  {GENERATING_STEPS[stepIdx]}
+                </p>
               </div>
             )}
           </div>
@@ -232,17 +289,23 @@ export default function GeneratePage() {
 
         {/* ────────────────────────────────────────────────────────────────────
             PHASE: review — editable draft
-        ──────────────────────────────────────────────────────────────────── */}
+         */}
         {phase === "review" && draft && (
           <div className="space-y-5">
-
             {/* Review banner */}
             <div className="bg-white border border-[#E3DFD6] rounded-xl p-5 flex flex-col md:flex-row md:items-center gap-4">
               <div className="flex items-center gap-3 flex-1">
-                <span className="w-8 h-8 rounded-full bg-violet-100 text-violet-700 text-sm font-bold flex items-center justify-center flex-shrink-0">✦</span>
+                <span className="w-8 h-8 rounded-full bg-violet-100 text-violet-700 text-sm font-bold flex items-center justify-center flex-shrink-0">
+                  ✦
+                </span>
                 <div>
-                  <p className="text-sm font-semibold text-[#14213D]">Claude's draft is ready</p>
-                  <p className="text-xs text-[#9C9384]">Review and edit below — nothing is saved until you choose an action.</p>
+                  <p className="text-sm font-semibold text-[#14213D]">
+                    Claude's draft is ready
+                  </p>
+                  <p className="text-xs text-[#9C9384]">
+                    Review and edit below — nothing is saved until you choose an
+                    action.
+                  </p>
                 </div>
               </div>
               <div className="flex gap-3 flex-shrink-0">
@@ -276,10 +339,8 @@ export default function GeneratePage() {
             )}
 
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-5">
-
               {/* ── Editable content ── */}
               <div className="space-y-5">
-
                 <div className="bg-white border border-[#E3DFD6] rounded-xl p-6">
                   <label className="review-label">Title</label>
                   <input
@@ -303,7 +364,8 @@ export default function GeneratePage() {
                   <div className="flex items-center justify-between mb-1">
                     <label className="review-label">Content</label>
                     <span className="text-xs text-[#9C9384]">
-                      {editContent.trim().split(/\s+/).filter(Boolean).length} words
+                      {editContent.trim().split(/\s+/).filter(Boolean).length}{" "}
+                      words
                     </span>
                   </div>
                   <textarea
@@ -313,12 +375,10 @@ export default function GeneratePage() {
                     className="review-input resize-y font-serif leading-relaxed mt-1"
                   />
                 </div>
-
               </div>
 
               {/* ── Sidebar meta ── */}
               <div className="space-y-5">
-
                 <div className="bg-white border border-[#E3DFD6] rounded-xl p-5">
                   <label className="review-label mb-2 block">URL slug</label>
                   <p className="text-xs text-[#9C9384] font-mono break-all">
@@ -340,7 +400,9 @@ export default function GeneratePage() {
                 </div>
 
                 <div className="bg-white border border-[#E3DFD6] rounded-xl p-5">
-                  <label className="review-label mb-2 block">Topics / tags</label>
+                  <label className="review-label mb-2 block">
+                    Topics / tags
+                  </label>
                   <input
                     value={editTags}
                     onChange={(e) => setEditTags(e.target.value)}
@@ -348,16 +410,27 @@ export default function GeneratePage() {
                     className="review-input"
                   />
                   <div className="flex flex-wrap gap-1.5 mt-3">
-                    {editTags.split(",").map((t) => t.trim()).filter(Boolean).map((t) => (
-                      <span key={t} className="text-[10px] text-[#C9A227] font-semibold uppercase tracking-wide">{t}</span>
-                    ))}
+                    {editTags
+                      .split(",")
+                      .map((t) => t.trim())
+                      .filter(Boolean)
+                      .map((t) => (
+                        <span
+                          key={t}
+                          className="text-[10px] text-[#C9A227] font-semibold uppercase tracking-wide"
+                        >
+                          {t}
+                        </span>
+                      ))}
                   </div>
                 </div>
 
                 <div className="bg-white border border-[#E3DFD6] rounded-xl p-5">
                   <div className="flex items-center justify-between mb-1">
                     <label className="review-label">Meta description</label>
-                    <span className={`text-xs ${editMeta.length > 160 ? "text-red-500" : "text-[#9C9384]"}`}>
+                    <span
+                      className={`text-xs ${editMeta.length > 160 ? "text-red-500" : "text-[#9C9384]"}`}
+                    >
                       {editMeta.length}/160
                     </span>
                   </div>
@@ -377,7 +450,6 @@ export default function GeneratePage() {
                 >
                   ↺ Generate a different draft
                 </button>
-
               </div>
             </div>
 
@@ -404,7 +476,6 @@ export default function GeneratePage() {
                 Publish
               </button>
             </div>
-
           </div>
         )}
       </main>
