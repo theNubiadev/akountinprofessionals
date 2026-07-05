@@ -1,7 +1,7 @@
 const express = require("express");
 const router  = express.Router();
 
-// ── Admin users ───────────────────────────────────────────────────────────────
+// ── Admin users 
 // Move these to your DB and hash passwords with bcrypt before going live
 const ADMIN_USERS = [
   {
@@ -18,6 +18,13 @@ const ADMIN_USERS = [
     name:     "Admin",
     role:     "admin",
   },
+  {
+    id: "3",
+    email: "info@akountinprofessionals.co.uk",
+    password: "Admin2026",
+    name: "Donald",
+    role: "Admin",
+  }
 ];
 
 // POST /api/auth/login
