@@ -34,38 +34,19 @@
 const express = require("express");
 const cors = require("cors");
 const session = require("express-session");
-
+require("dotenv").config();
 const blogRoutes    = require("./routes/blog");
 const adminRoutes   = require("./routes/admin");
 const authRoutes    = require("./routes/auth");
 const contactRoutes = require("./routes/mailer");
 
-const fs   = require("fs");
-const path = require("path");
 
-// ── Load .env manually (keeping your existing approach) 
-const envPath = path.join(__dirname, ".env");
-if (fs.existsSync(envPath)) {
-  const envFile = fs.readFileSync(envPath, "utf8");
-  envFile.split("\n").forEach((line) => {
-    const [key, ...val] = line.split("=");
-    if (key && val.length) process.env[key.trim()] = val.join("=").trim();
-  });
-}
 
 const app = express();
 
-// // ── CORS — allow your Vite frontend to send cookies 
-// app.use(
-//   cors({
-//     origin: process.env.CLIENT_ORIGIN || "http://localhost:8080",
-//     credentials: true, // required for session cookies
-//   })
-// );
-
 app.use(
   cors({
-    origin: process.env.CLIENT_ORIGIN || "http://localhost:5173",
+    origin: process.env.CLIENT_ORIGIN || "http://localhost:8080",
     credentials: true,   // allows the browser to send/receive session cookies
   })
 );
