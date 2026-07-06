@@ -27,25 +27,80 @@
 // export default router;
 
 
-const express = require("express");
-const router  = express.Router();
-const { posts } = require("../data/posts");
 
-// GET /api/blog — published posts, newest first
-router.get("/", (req, res) => {
-  const published = posts
-    .filter((p) => p.status === "published")
-    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
-  res.json(published);
+// const express = require("express");
+// const router  = express.Router();
+// const { posts } = require("../data/posts");
+
+// // GET /api/blog — published posts, newest first
+// router.get("/", (req, res) => {
+//   const published = posts
+//     .filter((p) => p.status === "published")
+//     .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+//   res.json(published);
+// });
+
+// // GET /api/blog/:slug — single published post
+// router.get("/:slug", (req, res) => {
+//   const post = posts.find(
+//     (p) => p.slug === req.params.slug && p.status === "published"
+//   );
+//   if (!post) return res.status(404).json({ error: "Post not found." });
+//   res.json(post);
+// });
+
+// module.exports = router;
+
+
+const express = require("express");
+const pool    = require("../db/db");
+
+const router = express.Router();
+
+function toPost(row) {
+  return {
+    id:              row.id,
+    slug:            row.slug,
+    title:           row.title,
+    excerpt:         row.excerpt,
+    content:         row.content,
+    tags:            row.tags,
+    authorName:      row.author_name,
+    author:          row.author_type,
+    status:          row.status,
+    readingMinutes:  row.reading_minutes,
+    metaDescription: row.meta_description,
+    createdAt:       row.created_at,
+    publishedAt:     row.published_at,
+  };
+}
+
+// ── GET /api/blog — all published posts, newest first ─────────────────────────
+router.get("/", async (req, res) => {
+  try {
+    const { rows } = await pool.query(
+      "SELECT * FROM posts WHERE status = 'published' ORDER BY published_at DESC"
+    );
+    res.json(rows.map(toPost));
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to fetch posts." });
+  }
 });
 
-// GET /api/blog/:slug — single published post
-router.get("/:slug", (req, res) => {
-  const post = posts.find(
-    (p) => p.slug === req.params.slug && p.status === "published"
-  );
-  if (!post) return res.status(404).json({ error: "Post not found." });
-  res.json(post);
+// ── GET /api/blog/:slug — single published post ───────────────────────────────
+router.get("/:slug", async (req, res) => {
+  try {
+    const { rows } = await pool.query(
+      "SELECT * FROM posts WHERE slug = $1 AND status = 'published'",
+      [req.params.slug]
+    );
+    if (!rows[0]) return res.status(404).json({ error: "Post not found." });
+    res.json(toPost(rows[0]));
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to fetch post." });
+  }
 });
 
 module.exports = router;
