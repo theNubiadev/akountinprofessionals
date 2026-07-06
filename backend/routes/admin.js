@@ -8,7 +8,7 @@ const router = express.Router();
 // All admin routes require a valid session
 router.use(requireAuth);
 
-// ── Helper: map DB row → API shape ────────────────────────────────────────────
+// ── Helper: map DB row → API shape 
 function toPost(row) {
   return {
     id:              row.id,
