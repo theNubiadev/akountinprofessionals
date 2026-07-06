@@ -1,10 +1,9 @@
--- ─────────────────────────────────────────────────────────────────────────────
+-- 
 -- Akountin Professionals — Blog Database Schema
 -- Run this once against your PostgreSQL database:
 --   psql -U youruser -d yourdb -f schema.sql
--- ─────────────────────────────────────────────────────────────────────────────
-
--- ── Admin users ───────────────────────────────────────────────────────────────
+-- 
+-- ── Admin users 
 CREATE TABLE IF NOT EXISTS admin_users (
   id            UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   email         TEXT NOT NULL UNIQUE,
@@ -14,7 +13,7 @@ CREATE TABLE IF NOT EXISTS admin_users (
   created_at    TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
--- ── Blog posts ────────────────────────────────────────────────────────────────
+-- ── Blog posts 
 CREATE TABLE IF NOT EXISTS posts (
   id               UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   slug             TEXT NOT NULL UNIQUE,
@@ -31,12 +30,12 @@ CREATE TABLE IF NOT EXISTS posts (
   published_at     TIMESTAMPTZ
 );
 
--- ── Indexes ───────────────────────────────────────────────────────────────────
+-- ── Indexes 
 CREATE INDEX IF NOT EXISTS posts_status_idx      ON posts (status);
 CREATE INDEX IF NOT EXISTS posts_published_at_idx ON posts (published_at DESC);
 CREATE INDEX IF NOT EXISTS posts_slug_idx         ON posts (slug);
 
--- ── Seed admin users (run once — change passwords immediately after) ───────────
+-- ── Seed admin users (run once — change passwords immediately after) ──────────
 -- Passwords are bcrypt hashes. Generate with: node -e "console.log(require('bcrypt').hashSync('YourPassword!', 10))"
 -- The values below hash to: Editor2024! and Admin2024!
 INSERT INTO admin_users (email, password_hash, name, role) VALUES
