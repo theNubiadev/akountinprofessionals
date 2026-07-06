@@ -54,7 +54,7 @@ INSERT INTO admin_users (email, password_hash, name, role) VALUES
   )
 ON CONFLICT (email) DO NOTHING;
 
--- ── Seed sample posts ─────────────────────────────────────────────────────────
+-- ── Seed sample posts 
 INSERT INTO posts (slug, title, excerpt, content, tags, author_name, author_type, status, reading_minutes, meta_description, published_at) VALUES
 (
   'understanding-self-assessment-deadlines-2024-25',
