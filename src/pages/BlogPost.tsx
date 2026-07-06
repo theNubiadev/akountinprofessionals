@@ -351,7 +351,7 @@ export default function BlogPost() {
         .slice(0, 2)
     : [];
 
-  // ── Loading ───────────────────────────────────────────────────────────────
+  // ── Loading 
   if (loading) {
     return (
       <div className="flex flex-col min-h-screen bg-[#F8F6F1]">
@@ -364,7 +364,7 @@ export default function BlogPost() {
     );
   }
 
-  // ── Not found ─────────────────────────────────────────────────────────────
+  // ── Not found 
   if (!post) {
     return (
       <div className="flex flex-col min-h-screen bg-[#F8F6F1]">
@@ -382,7 +382,7 @@ export default function BlogPost() {
     );
   }
 
-  // ── Post found ────────────────────────────────────────────────────────────
+  // ── Post found 
   return (
     <div className="flex flex-col min-h-screen bg-[#F8F6F1]">
 
