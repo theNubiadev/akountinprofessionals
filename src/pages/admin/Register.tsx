@@ -1,8 +1,10 @@
 import { useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "@/context/AuthContext";
 
-export default function AdminRegister() {
-  const navigate = useNavigate();
+export default function Register() {
+  const { login } = useAuth();
+  const navigate  = useNavigate();
 
   const [name,     setName]     = useState("");
   const [email,    setEmail]    = useState("");
@@ -10,7 +12,6 @@ export default function AdminRegister() {
   const [confirm,  setConfirm]  = useState("");
   const [busy,     setBusy]     = useState(false);
   const [error,    setError]    = useState("");
-  const [done,     setDone]     = useState(false);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -27,16 +28,19 @@ export default function AdminRegister() {
 
     setBusy(true);
     try {
-      const res = await fetch("/api/auth/register", {
-        method:  "POST",
-        headers: { "Content-Type": "application/json" },
-        body:    JSON.stringify({ name, email, password }),
+      const res  = await fetch("/api/auth/register", {
+        method:      "POST",
+        credentials: "include",
+        headers:     { "Content-Type": "application/json" },
+        body:        JSON.stringify({ name, email, password }),
       });
 
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Registration failed.");
 
-      setDone(true);
+      // Auto-login — session is already set server-side
+      await login(email, password);
+      navigate("/admin/dashboard", { replace: true });
     } catch (err) {
       setError((err as Error).message);
     } finally {
@@ -44,39 +48,6 @@ export default function AdminRegister() {
     }
   }
 
-  // ── Success state ─────────────────────────────────────────────────────────
-  if (done) {
-    return (
-      <div className="min-h-screen bg-[#14213D] flex items-center justify-center px-4">
-        <div className="relative w-full max-w-sm">
-          <div className="bg-white rounded-xl shadow-2xl p-8 text-center">
-            {/* Envelope icon */}
-            <div className="w-14 h-14 rounded-full bg-[#14213D] flex items-center justify-center mx-auto mb-5">
-              <svg className="w-7 h-7 text-[#C9A227]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0-9.75 6.75L2.25 6.75" />
-              </svg>
-            </div>
-            <h2 className="font-serif text-xl text-[#14213D] mb-2">Check your email</h2>
-            <p className="text-sm text-[#6B6B6B] leading-relaxed mb-6">
-              We've sent a verification link to <strong className="text-[#14213D]">{email}</strong>.
-              Click the link to activate your account.
-            </p>
-            <p className="text-xs text-[#9C9384] mb-6">
-              The link expires in 24 hours. Check your spam folder if you don't see it.
-            </p>
-            <Link
-              to="/admin/login"
-              className="text-sm text-[#C9A227] hover:underline font-medium"
-            >
-              Back to sign in
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // ── Form ──────────────────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-[#14213D] flex items-center justify-center px-4">
       <div
@@ -182,6 +153,7 @@ export default function AdminRegister() {
               Sign in
             </Link>
           </p>
+
         </form>
 
         <p className="text-center text-white/25 text-xs mt-6">
