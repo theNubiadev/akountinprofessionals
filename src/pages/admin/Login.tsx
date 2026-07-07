@@ -17,7 +17,7 @@ export default function AdminLogin() {
     setBusy(true);
     try {
       await login(email, password);
-      navigate("/admin", { replace: true });
+      navigate("/admin/dashboard", { replace: true });
     } catch (err) {
       setError((err as Error).message || "Sign-in failed.");
     } finally {
