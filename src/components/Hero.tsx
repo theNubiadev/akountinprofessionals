@@ -20,9 +20,6 @@ export default function Hero() {
         {/* Gradient */}
         <div className="absolute inset-0 bg-[linear-gradient(135deg,hsl(var(--primary))_55%,hsl(var(--primary)/0.85)_100%)]" />
 
-        {/* Noise */}
-        {/* <div className="absolute inset-0 opacity-[0.03] bg-[url(\"data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")] bg-[length:200px_200px]" /> */}
-
         {/* Circles */}
         <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,hsl(var(--secondary)/0.18)_0%,transparent_70%)]" />
         <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-[radial-gradient(circle,hsl(var(--secondary)/0.12)_0%,transparent_70%)]" />
