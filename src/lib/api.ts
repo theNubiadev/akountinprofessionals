@@ -159,7 +159,7 @@ export interface GeneratedDraft {
 
 export type PostPayload = Partial<Omit<Post, "id" | "createdAt" | "readingMinutes">>;
 
-// ── Auth ──────────────────────────────────────────────────────────────────────
+// ── Auth 
 export const auth = {
   login: (email: string, password: string) =>
     request<AdminUser>("/api/auth/login", {
@@ -168,12 +168,12 @@ export const auth = {
     }),
 
   logout: () =>
-    request<{ ok: boolean }>("/api/auth/logout", { method: "POST" }),
+    request<{ ok: boolean }>("/backend/api/auth/logout", { method: "POST" }),
 
   me: () => request<AdminUser>("/api/auth/me"),
 };
 
-// ── Admin posts ───────────────────────────────────────────────────────────────
+// ── Admin posts 
 export const adminPosts = {
   list: () =>
     request<Post[]>("/api/admin/posts"),
