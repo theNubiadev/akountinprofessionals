@@ -15,6 +15,7 @@ import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminLogin from "./pages/admin/Login";
 import AdminRegister from "./pages/admin/Register";
+import VerifyEmail from "./pages/admin/VerifyEmail";
 import AdminDashboard from "./pages/admin/Dashboard";
 import PostEditor from "./pages/admin/Posteditor";
 import GeneratePage from "./pages/admin/Generate";
@@ -39,6 +40,7 @@ const App = () => (
             {/* ── Admin auth ── */}
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin/register" element={<AdminRegister />} />
+            <Route path="/admin/verify-email" element={<VerifyEmail />} />
             {/* ── Protected admin routes ── */}
             <Route element={<ProtectedRoute />}>
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
