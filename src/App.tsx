@@ -14,8 +14,9 @@ import BlogPost from "./pages/BlogPost";
 import { AuthProvider } from "./context/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminLogin from "./pages/admin/Login";
-import AdminDashboard from "./pages/admin/Dashboard"; 
-import PostEditor from "./pages/admin/Posteditor"; 
+import AdminRegister from "./pages/admin/Register";
+import AdminDashboard from "./pages/admin/Dashboard";
+import PostEditor from "./pages/admin/Posteditor";
 import GeneratePage from "./pages/admin/Generate";
 
 const queryClient = new QueryClient();
@@ -37,7 +38,7 @@ const App = () => (
 
             {/* ── Admin auth ── */}
             <Route path="/admin/login" element={<AdminLogin />} />
-
+            <Route path="/admin/register" element={<AdminRegister />} />
             {/* ── Protected admin routes ── */}
             <Route element={<ProtectedRoute />}>
               <Route path="/admin/dashboard" element={<AdminDashboard />} />
