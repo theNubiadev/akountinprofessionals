@@ -120,9 +120,8 @@ router.post("/generate", async (req, res) => {
     const generated = await generateBlogPost({ topic, keywords, tone });
 
     // Ensure slug is unique in DB
-    const { rows } = await pool.query("SELECT id FROM posts WHERE slug = $1", [
-      generated.slug,
-    ]);
+  
+   const existing = await prisma.post.findUnique({ where: { slug: generated.slug } });
     if (rows.length) {
       generated.slug = `${generated.slug}-${Date.now().toString(36)}`;
     }

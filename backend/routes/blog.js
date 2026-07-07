@@ -11,7 +11,7 @@ function toPost(row) {
     excerpt:         row.excerpt,
     content:         row.content,
     tags:            row.tags,
-    authorName:      row.author_name,
+    authorName:     row.authorName,
     author:          row.author_type,
     status:          row.status,
     readingMinutes:  row.reading_minutes,
