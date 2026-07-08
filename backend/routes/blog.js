@@ -4,6 +4,7 @@ const prisma    = require("../db/db");
 const router = express.Router();
 
 function toPost(row) {
+  // blog
   return {
     id:              row.id,
     slug:            row.slug,
