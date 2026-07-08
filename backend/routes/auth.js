@@ -4,7 +4,7 @@ const prisma  = require("../db/db");
 
 const router = express.Router();
 
-// ── POST /api/auth/register ───────────────────────────────────────────────────
+// ── POST /api/auth/register 
 router.post("/register", async (req, res) => {
   const { name, email, password, role = "editor" } = req.body;
 
@@ -49,7 +49,7 @@ router.post("/register", async (req, res) => {
     res.status(500).json({ error: "Registration failed. Please try again." });
   }
 });
-
+// ── POST /api/auth/login 
 router.post("/login", async (req, res) => {
   console.time("login");
   const { email, password } = req.body;
@@ -74,7 +74,7 @@ router.post("/login", async (req, res) => {
   res.json({ id: user.id, name: user.name, email: user.email, role: user.role });
 });
 
-// // ── POST /api/auth/login 
+// ── POST /api/auth/login 
 // router.post("/login", async (req, res) => {
 //   const { email, password } = req.body;
 
