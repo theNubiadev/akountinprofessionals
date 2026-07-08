@@ -123,7 +123,7 @@ export default function VisionMission() {
                 <p className="text-xs font-bold tracking-widest uppercase text-secondary">
                   01
                 </p>
-                <h3 className="font-bold text-white leading-tight font-[1.6rem] font-comfortaa">
+                <h3 className=" text-white leading-tight font-[1.6rem] font-comfortaa">
                   Our Vision
                 </h3>
               </div>
@@ -141,7 +141,7 @@ export default function VisionMission() {
             </p>
 
             {/* Decorative quote mark */}
-            <p className="absolute top-6 right-8 leading-none select-none pointer-events-none font-bold leading-none text-[8rem] text-secondary/10">
+            <p className="absolute top-6 right-8 leading-none select-none pointer-events-none font-bold  text-[8rem] text-secondary/10">
               "
             </p>
           </div>
@@ -160,7 +160,7 @@ export default function VisionMission() {
                 <p className="text-xs font-bold tracking-widest uppercase text-secondary">
                   02
                 </p>
-                <h3 className="font-bold text-white leading-tight font-[1.6rem] font-comfortaa">
+                <h3 className=" text-white leading-tight font-[1.6rem] font-comfortaa">
                   Our Mission
                 </h3>
               </div>

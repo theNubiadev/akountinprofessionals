@@ -123,7 +123,7 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
   return res.json() as Promise<T>;
 }
 
-// ── Types ─────────────────────────────────────────────────────────────────────
+// ── Types 
 export interface Post {
   id: string;
   slug: string;
@@ -167,8 +167,9 @@ export const auth = {
       body: JSON.stringify({ email, password }),
     }),
 
-  logout: () =>
-    request<{ ok: boolean }>("/backend/api/auth/logout", { method: "POST" }),
+  logout: () =>  
+    //  removed the /backend prefix
+    request<{ ok: boolean }>("/api/auth/logout", { method: "POST" }),
 
   me: () => request<AdminUser>("/api/auth/me"),
 };
@@ -194,7 +195,7 @@ export const adminPosts = {
     request<{ ok: boolean }>(`/api/admin/posts/${id}`, { method: "DELETE" }),
 };
 
-// ── AI generation ─────────────────────────────────────────────────────────────
+// ── AI generation 
 export const ai = {
   generate: (topic: string, keywords: string[], tone: string) =>
     request<GeneratedDraft>("/api/admin/generate", {
@@ -203,7 +204,7 @@ export const ai = {
     }),
 };
 
-// ── Public blog (used by Blog.tsx and BlogPost.tsx) ───────────────────────────
+// ── Public blog (used by Blog.tsx and BlogPost.tsx) 
 export const publicPosts = {
   list: ()             => request<Post[]>("/api/blog"),
   bySlug: (slug: string) => request<Post>(`/api/blog/${slug}`),
