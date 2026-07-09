@@ -38,11 +38,18 @@ app.use(
   })
 );
 
-// ── Routes 
-app.use("/api/auth",    authRoutes);    // login, logout, /me
-app.use("/api/blog",    blogRoutes);    // public blog posts
-app.use("/api/admin",   adminRoutes);   // protected post CRUD + AI generate
-app.use("/api/contact", contactRoutes); // existing mailer
+// // ── Routes 
+// app.use("/api/auth",    authRoutes);    // login, logout, /me
+// app.use("/api/blog",    blogRoutes);    // public blog posts
+// app.use("/api/admin",   adminRoutes);   // protected post CRUD + AI generate
+// app.use("/api/contact", contactRoutes); // existing mailer
+
+
+app.use("/backend/api/auth",    authRoutes);
+app.use("/backend/api/blog",    blogRoutes);
+app.use("/backend/api/admin",   adminRoutes);
+app.use("/backend/api/contact", contactRoutes);
+
 
 // ── Health check 
 app.get("/backend", (req, res) => res.send("Backend is running..."));''

@@ -51,27 +51,31 @@ router.post("/register", async (req, res) => {
 });
 // ── POST /api/auth/login 
 router.post("/login", async (req, res) => {
-  console.time("login");
   const { email, password } = req.body;
 
-  console.time("db-query");
-  const user = await prisma.adminUser.findUnique({
-    where: { email: email.toLowerCase().trim() },
-  });
-  console.timeEnd("db-query");
+  if (!email || !password) {
+    return res.status(400).json({ error: "Email and password are required." });
+  }
 
-  if (!user) return res.status(401).json({ error: "Invalid email or password." });
+  try {
+    console.time("db-query");
+    const user = await prisma.adminUser.findUnique({
+      where: { email: email.toLowerCase().trim() },
+    });
+    console.timeEnd("db-query");
 
-  console.time("bcrypt");
-  const match = await bcrypt.compare(password, user.passwordHash);
-  console.timeEnd("bcrypt");
+    if (!user) return res.status(401).json({ error: "Invalid email or password." });
 
-  if (!match) return res.status(401).json({ error: "Invalid email or password." });
+    const match = await bcrypt.compare(password, user.passwordHash);
+    if (!match) return res.status(401).json({ error: "Invalid email or password." });
 
-  req.session.userId = user.id;
-  console.timeEnd("login");
+    req.session.userId = user.id;
 
-  res.json({ id: user.id, name: user.name, email: user.email, role: user.role });
+    res.json({ id: user.id, name: user.name, email: user.email, role: user.role });
+  } catch (err) {
+    console.error("Login error:", err.message, err.code, err);
+    res.status(500).json({ error: "Server error during login." });
+  }
 });
 
 // ── POST /api/auth/login 

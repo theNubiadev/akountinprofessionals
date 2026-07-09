@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
-
+import { auth } from "@/lib/api";
 export default function Register() {
   const { login } = useAuth();
   const navigate  = useNavigate();
@@ -28,15 +28,9 @@ export default function Register() {
 
     setBusy(true);
     try {
-      const res  = await fetch("/api/auth/register", {
-        method:      "POST",
-        credentials: "include",
-        headers:     { "Content-Type": "application/json" },
-        body:        JSON.stringify({ name, email, password }),
-      });
+     
 
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "Registration failed.");
+      await auth.register(name, email, password);
 
       // Auto-login — session is already set server-side
       await login(email, password);
