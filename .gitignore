@@ -25,3 +25,4 @@ dist-ssr
 
 .github\workflows
 .gitlab-ci.yml
+env.txt
