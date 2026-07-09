@@ -108,9 +108,12 @@
 // No base URL needed — Vite proxies /api/* to http://localhost:5000 in dev,
 // and in production your reverse-proxy (Nginx/Vercel/etc) does the same.
 
+// src/lib/api.ts
+const API_BASE = "/backend";
+
 async function request<T>(path: string, options?: RequestInit): Promise<T> {
-  const res = await fetch(path, {
-    credentials: "include", // sends the session cookie with every request
+  const res = await fetch(`${API_BASE}${path}`, {
+    credentials: "include",
     headers: { "Content-Type": "application/json", ...options?.headers },
     ...options,
   });
@@ -122,7 +125,6 @@ async function request<T>(path: string, options?: RequestInit): Promise<T> {
 
   return res.json() as Promise<T>;
 }
-
 // ── Types 
 export interface Post {
   id: string;
